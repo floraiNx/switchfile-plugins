@@ -1,0 +1,21 @@
+{
+  "name": "switchfile",
+  "displayName": "switchfile",
+  "version": "0.1.0",
+  "description": "Convert local files and URLs to other formats with switchfile. The result is saved next to the input file.",
+  "author": {
+    "name": "switchfile",
+    "email": "hello@switchfile.io",
+    "url": "https://switchfile.io"
+  },
+  "homepage": "https://switchfile.io/developers#mcp",
+  "keywords": [
+    "file-conversion",
+    "converter",
+    "video",
+    "pdf",
+    "images"
+  ],
+  "repository": "https://github.com/floraiNx/switchfile-plugins",
+  "license": "MIT"
+}
