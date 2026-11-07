@@ -6,6 +6,12 @@ documents, ebooks and more. The result is saved next to the input file.
 ## Install
 
 ```
+/plugin install switchfile --marketplace floraiNx/switchfile-plugins
+```
+
+On older Claude Code versions:
+
+```
 /plugin marketplace add floraiNx/switchfile-plugins
 /plugin install switchfile@switchfile
 ```
