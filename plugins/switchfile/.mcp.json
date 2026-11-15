@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "switchfile": {
+      "command": "npx",
+      "args": ["-y", "switchfile-mcp"],
+      "env": {
+        "SWITCHFILE_API_KEY": "${SWITCHFILE_API_KEY:-}",
+        "SWITCHFILE_API_URL": "${SWITCHFILE_API_URL:-https://api.switchfile.io}"
+      }
+    }
+  }
+}
