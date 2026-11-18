@@ -2,7 +2,7 @@
 
 Adds the hosted switchfile MCP server (`https://mcp.switchfile.io/mcp`) and the `convert-files` skill. The agent can
 then convert files from your project or from a URL, for example a PDF to Markdown with its tables for an LLM or RAG
-pipeline, a PDF to XLSX, or `talk.mkv` to MP4. Results are saved next to the input file.
+pipeline, a PDF to XLSX, or `talk.mkv` to MP4. Results of local files are saved next to the input file.
 
 ## Setup
 
@@ -10,7 +10,8 @@ pipeline, a PDF to XLSX, or `talk.mkv` to MP4. Results are saved next to the inp
 2. Open the MCP settings in Cursor and connect switchfile. A switchfile page opens where you sign in with your
    switchfile account (or create one) and allow access. No API key is needed.
 
-Conversions count toward your daily free quota and credits, like API requests. The free quota is 20 files a day.
+Conversions count toward your daily free quota and credits, like API requests. The free quota is 20 files and
+20 minutes of conversion time a day.
 
 ## Examples
 

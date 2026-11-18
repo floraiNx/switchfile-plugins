@@ -14,21 +14,22 @@ Its tools: `convert_url`, `create_upload`, `convert_upload`, `get_conversion`, `
 1. Call `create_upload` with `filename` (the name with its extension, which sets the input format) and `size` in
    bytes.
 2. Send the file with HTTP PUT to the returned `url`, adding the returned headers if there are any:
-   `curl -sS -T "/absolute/path/report.pdf" "<url>"`
+   `curl -fsS -T "/absolute/path/report.pdf" "<url>"`. If curl fails, stop and report the error.
 3. Call `convert_upload` with `upload_id` and `to`, for example `md`, `xlsx`, `pdf` or `png`.
 4. Download every result link right away (links expire) and save it next to the input file, unless the user wants
-   another place: `curl -sS -L -o "/absolute/path/report.md" "<link>"`. Do not overwrite an existing file without
-   asking.
+   another place: `curl -fsSL -o "/absolute/path/report.md" "<link>"`. If curl fails, the link has expired or the
+   download was refused: call `get_conversion` with `id` for fresh links instead of keeping the failed file. Do not
+   overwrite an existing file without asking.
 
 ## A file at a public URL
 
 Call `convert_url` with `url` and `to`. Pass `filename` when the URL does not show the format, for example
-`report.docx`.
+`report.docx`. Save the results in the project folder the user names, or give the user the download links.
 
 ## Reading documents
 
-- To read a PDF or an Office document as text, convert it to `md`. Tables become pipe tables, and each page starts
-  with a comment such as `<!-- page 4 -->` that you can cite.
+- To read a PDF or an Office document as text, convert it to `md`. Tables become pipe tables. From a PDF, each page
+  starts with a comment such as `<!-- page 4 -->` that you can cite; a worksheet or slide gets its own section.
 - To work with the content as data, convert it to `json`: each page lists its text blocks, and tables come as cells
   with row and column.
 - If you are unsure whether a conversion exists, call `list_formats` with `input` (for example `pdf`). It returns
@@ -36,8 +37,10 @@ Call `convert_url` with `url` and `to`. Pass `filename` when the URL does not sh
 
 ## Results and errors
 
-- A longer conversion returns an `id` instead of links. Call `get_conversion` with `id` and `wait` up to 25 until it
-  has finished.
+- A longer conversion returns an `id` and the status `queued` or `processing` instead of links. Call
+  `get_conversion` with `id` and `wait` up to 25 while the status stays `queued` or `processing`, for at most about
+  five minutes in total; then tell the user the conversion is still running and give the `id`.
+- Status `failed`: stop and tell the user the `error` message.
 - Several results, for example one PNG per PDF page, come as several links.
 - If the tools report that the user is not signed in, ask the user to connect switchfile in Cursor's MCP settings.
 - If the daily free quota or the credits are used up, tell the user. `account` shows the balance and when the free
