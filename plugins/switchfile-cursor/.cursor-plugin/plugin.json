@@ -1,0 +1,14 @@
+{
+  "name": "switchfile",
+  "description": "Convert files with switchfile: PDF to Markdown with tables for LLM and RAG pipelines, PDF to Excel, Office documents, images, audio, video and web pages. Sign in with your switchfile account; no API key to set up.",
+  "version": "0.1.0",
+  "author": {
+    "name": "switchfile",
+    "email": "hello@switchfile.io"
+  },
+  "homepage": "https://switchfile.io/docs/mcp",
+  "repository": "https://github.com/floraiNx/switchfile-plugins",
+  "license": "MIT",
+  "keywords": ["file-conversion", "pdf", "markdown", "rag", "excel", "ocr", "converter"],
+  "logo": "assets/logo.svg"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "switchfile",
+  "owner": {
+    "name": "switchfile",
+    "email": "hello@switchfile.io"
+  },
+  "metadata": {
+    "description": "switchfile plugins for Cursor"
+  },
+  "plugins": [
+    {
+      "name": "switchfile",
+      "source": "plugins/switchfile-cursor",
+      "description": "Convert files with switchfile: PDF to Markdown with tables for LLM and RAG pipelines, PDF to Excel, Office documents, images, audio, video and web pages."
+    }
+  ]
+}

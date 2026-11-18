@@ -1,4 +1,4 @@
-# switchfile plugins for Claude Code
+# switchfile plugins for Claude Code and Cursor
 
 Convert files on your computer from Claude Code with [switchfile](https://switchfile.io): video, audio, images,
 documents, ebooks and more. The result is saved next to the input file.
@@ -25,7 +25,13 @@ export SWITCHFILE_API_KEY=your_key
 Requires Node.js 18 or newer. The plugin runs the MCP server from the npm package
 [`switchfile-mcp`](https://www.npmjs.com/package/switchfile-mcp).
 
-Other clients (Codex, Cursor, VS Code): see https://switchfile.io/developers#mcp.
+## Cursor
+
+The Cursor plugin in `plugins/switchfile-cursor` uses the hosted server `https://mcp.switchfile.io/mcp`: you sign in
+with your switchfile account, no API key needed. It adds the same `convert-files` skill, adapted to the hosted tools.
+See [its README](plugins/switchfile-cursor/README.md).
+
+Other clients (Codex, VS Code): see https://switchfile.io/developers#mcp.
 
 ## License
 
