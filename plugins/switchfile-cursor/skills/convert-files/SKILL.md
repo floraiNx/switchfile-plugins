@@ -14,7 +14,7 @@ Its tools: `convert_url`, `create_upload`, `convert_upload`, `get_conversion`, `
 1. Call `create_upload` with `filename` (the name with its extension, which sets the input format) and `size` in
    bytes.
 2. Send the file with HTTP PUT to the returned `url`, adding the returned headers if there are any:
-   `curl -fsS -T "/absolute/path/report.pdf" "<url>"`. If curl fails, stop and report the error.
+   `curl -fsS --globoff -T "/absolute/path/report.pdf" "<url>"`. If curl fails, stop and report the error.
 3. Call `convert_upload` with `upload_id` and `to`, for example `md`, `xlsx`, `pdf` or `png`.
 4. Download every result link right away (links expire) and save it next to the input file, unless the user wants
    another place: `curl -fsSL -o "/absolute/path/report.md" "<link>"`. If curl fails, the link has expired or the
